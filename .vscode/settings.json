@@ -2,7 +2,9 @@
     "files.associations": {
         "iostream": "cpp",
         "xhash": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xstring": "cpp",
+        "map": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
