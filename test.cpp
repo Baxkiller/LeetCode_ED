@@ -19,16 +19,10 @@ int toInterger(string number)
 
 int main()
 {
-    map<string,int> nums;
-    nums.emplace(to_string(1),0);
-    nums.emplace(to_string(10),0);
-    nums.emplace(to_string(11),0);
-    nums.emplace(to_string(110),0);
-    nums.emplace(to_string(109),0);
-    nums.emplace(to_string(2),0);
-    for(auto it:nums)
-    {
-        cout<<it.first<<" ";
-    }
-    cout<<endl;
+    vector<vector<int>> nums(3,vector<int>(3));
+    cout<<nums.size()<<" "<<nums[0].size()<<endl;
+
+    vector<vector<int>> tmp(nums);
+    cout<<tmp.size()<<" "<<tmp[0].size()<<endl;
+    return 0;
 }
