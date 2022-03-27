@@ -1,5 +1,38 @@
 # LeetCode_ED
 记录一下自己的刷题记录.
+
+
+- 如何获得某种类型的迭代器?
+  以`vector`为例
+  ```c++
+  bool Compare(vector<int>::iterator a,vector<int>::iterator b);
+  ```
+
+- 今天的每日一题:
+  如果一个vector中的每个元素都有相同的值,那么比较好的方法应该是通过在初始赋值时,通过设定初始值完成全部元素的赋值,形如
+  ```c++
+  vector<vector<int>> nums(initSize,initVal);
+  ```
+  如果不确定的话,可以在数量确定之后,使用resize函数进行重新赋值:
+  ```c++
+  nums.resize(newSize,newVal);
+  ```
+  需要注意的是,如果初始数组已经初始化了,也就是已经有值了,那么通过resize方法,只会对后面新增的数组内容赋值newVal,原val值不变.
+  如果初始数组没有初始化过,那么使用该方法比较快捷.
+  给出例子:
+  ```c++
+  vector<int> nums(10,5);
+  for(auto &it:nums) cout<<it<<" ";
+  cout<<endl;
+  
+  nums.resize(15,2);
+  for(auto &it:nums) cout<<it<<" ";
+  cout<<endl;
+  ```
+  输出值:
+  > 5 5 5 5 5 5 5 5 5 5
+  > 5 5 5 5 5 5 5 5 5 5 2 2 2 2 2
+
 - TNND!为什么每次自己考虑的都不够全面!!
   想办法把所有可能的情况都考虑到真是个大难事啊
 

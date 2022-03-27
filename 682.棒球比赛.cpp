@@ -11,33 +11,25 @@ using namespace std;
 class Solution {
 public:
     int calPoints(vector<string>& ops) {
-        for(int i=0;i<ops.size();)
-        {
-            if(ops[i]=="C")
-            {
-                int nxt=i-1;
-                ops.erase(ops.begin()+i);
-                ops.erase(ops.begin()+i-1);
-                i=nxt;
-            }
-            else if(ops[i]=="D")
-            {
-                ops[i]=to_string(atoi(ops[i-1].data())*2);
-                i++;
-            }
-            else if(ops[i]=="+")
-            {
-                ops[i]=to_string(atoi(ops[i-1].data())+atoi(ops[i-2].data()));
-                i++;
-            }
-            else
-                i++;
-        }
-        long long ret=0;
+        int idex=0;
+        int ret=0;
+        int tmp;
+        vector<int> Nums(ops.size(),0);
         for(auto it:ops)
         {
-            ret+=atoi(it.data());
+            if(it[0]=='C')
+                Nums.pop_back();
+            else if(it[0]=='+')
+            {
+                idex=Nums.size()-1;
+                Nums.push_back(Nums[idex]+Nums[idex-1]);
+            }
+            else if(it[0]=='D')
+                Nums.push_back(Nums.back()*2);
+            else
+                Nums.push_back(atoi(it.data()));
         }
+        for(auto it:Nums) ret+=it;
         return ret;
     }
 };

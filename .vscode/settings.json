@@ -5,7 +5,8 @@
         "vector": "cpp",
         "xstring": "cpp",
         "map": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
