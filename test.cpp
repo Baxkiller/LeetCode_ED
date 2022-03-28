@@ -3,11 +3,10 @@ using namespace std;
 
 int main()
 {
-    vector<int> nums(10,5);
-    for(auto &it:nums) cout<<it<<" ";
-    cout<<endl;
-    
-    nums.resize(15,2);
-    for(auto &it:nums) cout<<it<<" ";
-    cout<<endl;
+    vector<int> nums;
+    for(int i=0;i<5;i++)
+        nums.push_back(i);
+    cout<<nums.capacity()<<endl;
+    nums.shrink_to_fit();
+    cout<<nums.capacity()<<endl;
 }
