@@ -6,7 +6,10 @@
         "xstring": "cpp",
         "map": "cpp",
         "xiosbase": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "algorithm": "cpp",
+        "queue": "cpp",
+        "xstddef": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

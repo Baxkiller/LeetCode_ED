@@ -1,6 +1,32 @@
 # LeetCode_ED
 记录一下自己的刷题记录.
+- 库函数
+  - C++库函数`next_permutation(it.begin(),it.end())`,将所有元素按照字典序排列组合后,返回当前排序的下一个
+    实际上函数内部应该不是这样做的.
+  - 现成的库函数`reverse(it.begin(),it.end())`,可以直接将传入的元素反序排列
 
+
+
+- 回忆一下如何使用优先队列
+  ```c++
+  priority_queue<type,container_type<type>,less/geater<type>>;
+  ```
+  优先队列中默认使用的是大根堆.也就是说,如果在第三个参数处没有明确指明`less`/`greater`,则默认使用`less`,数值较大者优先.
+  当使用`greater`时,变成小根堆,此时数值较小者优先.
+
+  如果想要使用自定义结构体的优先级队列, 那么需要在结构体内对比较运算符进行重载:
+  - 如果使用的是默认的`less`,需要对小于号`<`进行内容重载.形式如下:
+    ```c++
+    struct Type
+    {
+      int a;
+      bool operator<(const Type& b) const
+      {
+        if...
+      }
+    };
+    ```
+  - 同样的道理,如果想要使用`greater`,需要对大于号`>`进行重载.
 
 - 如何获得某种类型的迭代器?
   以`vector`为例

@@ -3,10 +3,17 @@ using namespace std;
 
 int main()
 {
-    vector<int> nums;
-    for(int i=0;i<5;i++)
-        nums.push_back(i);
-    cout<<nums.capacity()<<endl;
-    nums.shrink_to_fit();
-    cout<<nums.capacity()<<endl;
+    vector<int> revector;
+    for(int i=0;i<10;i++)
+        revector.push_back(i);
+    for(int i=0;i<10;i++)
+        cout<<revector[i]<<" ";
+    cout<<endl;
+
+    reverse(revector.begin(),revector.end());
+    for(auto it:revector)  
+        cout<<it<<" ";
+    cout<<endl;
+
+    
 }
