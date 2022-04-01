@@ -1,5 +1,21 @@
 # LeetCode_ED
 记录一下自己的刷题记录.
+- 最简单的二分模板
+  ```c++
+  int left=1,right=n;
+  int mid=0;
+  while(left<=right)
+  {
+      mid=(left+right)/2;
+      if(isBadVersion(mid))
+          right=mid-1;
+      else
+          left=mid+1;
+  }
+  return left;
+  ```
+
+
 - 库函数
   - C++库函数`next_permutation(it.begin(),it.end())`,将所有元素按照字典序排列组合后,返回当前排序的下一个
     实际上函数内部应该不是这样做的.
