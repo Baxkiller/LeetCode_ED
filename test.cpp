@@ -1,19 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void print(int *n)
+{
+    for(int i=0;i<20;i++)
+        cout<<n[i]<<" ";
+    cout<<endl;
+}
+
 int main()
 {
-    vector<int> revector;
-    for(int i=0;i<10;i++)
-        revector.push_back(i);
-    for(int i=0;i<10;i++)
-        cout<<revector[i]<<" ";
-    cout<<endl;
-
-    reverse(revector.begin(),revector.end());
-    for(auto it:revector)  
-        cout<<it<<" ";
-    cout<<endl;
-
-    
+    // 对于memset的测试
+    int nums[20];
+    print(nums);
+    memset(nums,0,sizeof(nums));
+    print(nums);
+    return 0;
 }
