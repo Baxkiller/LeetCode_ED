@@ -1,5 +1,19 @@
 # LeetCode_ED
 记录一下自己的刷题记录.
+- 好久没有用到的`getline`
+  用来对字符串进行分隔
+  一般来说常常先将待处理字符串输入一个字符串流
+  然后使用`while`循环不断分隔处理
+  ```c++
+  string target;
+  stringstream ss;
+  ss<<target;
+  while(getline(ss,target,char))
+  {
+    ...
+  }
+  ```
+
 - 判断数组元素是否为0时,使用显示判断`t==0`的速度要快于隐式判断`!t`
 
 - 最简单的二分模板
