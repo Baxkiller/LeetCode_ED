@@ -11,14 +11,24 @@ void print(int n[10][10])
     }
 }
 
+void PrintS(char* c)
+{
+    for(int i=0;c[i]!='\0';i++)
+        cout<<c[i]<<" ";
+    cout<<endl;
+}
+
+void test(int* &nums)
+{
+    nums=nullptr;
+    return;
+}
+
 int main()
 {
-    // 对于memset的测试
-    int nums[10][10];
-    print(nums);
-
-    for(int i=0;i<10;i++)
-        memset(nums[i],0,sizeof(nums[i]));
-        
-    print(nums);
+    int *nums=new int[10];
+    test(nums);
+    if(nums==nullptr) cout<<"Y"<<endl;
+    else
+        for(int i=0;i<10;i++) cout<<nums[i]<<" ";
 }
