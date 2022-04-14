@@ -22,7 +22,8 @@
         "valarray": "cpp",
         "xtree": "cpp",
         "xutility": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "unordered_map": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
