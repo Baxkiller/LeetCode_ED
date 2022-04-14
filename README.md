@@ -42,6 +42,13 @@
   - C++库函数`next_permutation(it.begin(),it.end())`,将所有元素按照字典序排列组合后,返回当前排序的下一个
     实际上函数内部应该不是这样做的.
   - 现成的库函数`reverse(it.begin(),it.end())`,可以直接将传入的元素反序排列
+  - 今天复习数据结构才发现STL库中有现成的求和函数`accumulate`,参数有三个,分别是`begin`,`end`,`initVal`
+    如果是对数组进行求和,那么可以通过传入以下内容:`nums`,`nums+size`,`0`,完成对数组`nums`的求和.
+  - 快速输出数组或者List(不止这两种,只要是迭代器中定义了++的重载,那么就可以使用),可以通过借用库函数`copy`,具体使用语句如下:
+    ```c++
+    copy(List,list+m+1,ostream_iterator(cout," "))
+    ```
+    其中的`" "`代表输出时的间隔/隔断
 
 
 
