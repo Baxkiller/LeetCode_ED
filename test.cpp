@@ -1,22 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool is_prime(int num)
-{
-    for(int i=2;i<=sqrt(num);i++)
-        if(num%i==0) return false;
-    return true;
-}
-
 int main()
 {
-    int cnt=0;
-    for(int i=2;cnt<26;i++)
+    stack<int> s;
+    int nums[]={2,1,5,6,2,3};// 6个数字
+    int record[6];
+    s.push(nums[0]);
+    // 搞一个单调递减栈出来
+    for(int i=0;i<6;i++)
     {
-        if(is_prime(i)){
-            cout<<i<<",";
-            cnt++;
+        while(s.top()<nums[i])
+        {
+
         }
     }
-    cout<<"\nOver!"<<endl;
 }
