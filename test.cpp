@@ -8,11 +8,6 @@ int main()
     int record[6];
     s.push(nums[0]);
     // 搞一个单调递减栈出来
-    for(int i=0;i<6;i++)
-    {
-        while(s.top()<nums[i])
-        {
-
-        }
-    }
+    int n=1;
+    while(n--) cout<<"*";
 }
