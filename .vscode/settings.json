@@ -26,7 +26,8 @@
         "unordered_map": "cpp",
         "xtr1common": "cpp",
         "cmath": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "iterator": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

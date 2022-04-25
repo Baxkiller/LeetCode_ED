@@ -21,6 +21,7 @@ for(int i=0;i<nums.size();i++)
 return ret;
 */
 // 新解法 51
+// 84--92
 // @lc code=start
 class Solution {
 public:
@@ -32,18 +33,18 @@ public:
         {
             while(nums[i]!=i+1)
             {
-                if(nums[i]<i+1)
-                {
-                    ret.push_back(i+1);
-                    break;
-                }
+                // if(nums[i]<i+1)
+                // {
+                //     ret.push_back(i+1);
+                //     break;
+                // }
                 if(nums[nums[i]-1]==nums[i])
                     break;
                 swap(nums[nums[i]-1],nums[i]);
             }
         }
-        // for(int i=nums.size()-1;i>=0;i--)
-        //     if(nums[i]!=i+1) ret.push_back(i+1);
+        for(int i=nums.size()-1;i>=0;i--)
+            if(nums[i]!=i+1) ret.push_back(i+1);
         return ret;
     }
 };
