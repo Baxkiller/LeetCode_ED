@@ -27,7 +27,8 @@
         "xtr1common": "cpp",
         "cmath": "cpp",
         "tuple": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "string": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

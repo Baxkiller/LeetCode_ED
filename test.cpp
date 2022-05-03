@@ -17,11 +17,12 @@ void check(vector<int>& nums)
 
 int main()
 {
-    vector<int> nums;
-    int n=10;
-    while(n--) nums.push_back(n);
-
-    for_each(nums.begin(),nums.end(),[](auto &i)->void{i=i*3;});
-    copy(nums.begin(),nums.end(),ostream_iterator<int>(cout," "));
-    cout<<endl;
+    // 尝试getline
+    stringstream ss;
+    string a="abc aaa";
+    ss<<a;
+    string tmp;
+    getline(ss,tmp,' ');
+    getline(ss,a,' ');
+    cout<<tmp<<"***"<<a<<endl;
 }
