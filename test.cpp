@@ -17,12 +17,23 @@ void check(vector<int>& nums)
 
 int main()
 {
-    // 尝试getline
-    stringstream ss;
-    string a="abc aaa";
-    ss<<a;
-    string tmp;
-    getline(ss,tmp,' ');
-    getline(ss,a,' ');
-    cout<<tmp<<"***"<<a<<endl;
+    // // 尝试getline
+    // stringstream ss;
+    // string a="abc aaa";
+    // ss<<a;
+    // string tmp;
+    // getline(ss,tmp,' ');
+    // getline(ss,a,' ');
+    // cout<<tmp<<"***"<<a<<endl;
+// 对于to_integer函数的认识?
+    string num="1756";
+    cout<<atoi(num.data())<<endl;
+
+    cout<<num.size()<<endl;
+
+    num.push_back(0);
+    cout<<num.size()<<endl;
+
+    for(auto &c:num) cout<<c<<"*";  
+    cout<<endl;
 }
