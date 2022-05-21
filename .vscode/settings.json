@@ -28,7 +28,8 @@
         "cmath": "cpp",
         "tuple": "cpp",
         "iterator": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "set": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
