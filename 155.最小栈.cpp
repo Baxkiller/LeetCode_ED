@@ -13,15 +13,24 @@ public:
     }
     
     void push(int val) {
-        s.push(val);
-        m.insert(val);
+        if(s.empty())
+        {
+            s.push(val);
+            minValue.push(val);
+        }
+        else
+        {
+            s.push(val);
+            if(val < minValue.top())
+                minValue.push(val);
+            else
+                minValue.push(minValue.top());
+        }
     }
     
     void pop() {
-        int delVal=s.top();
         s.pop();
-        auto it=m.find(delVal);
-        m.erase(it);
+        minValue.pop();
     }
     
     int top() {
@@ -29,11 +38,11 @@ public:
     }
     
     int getMin() {
-        return *m.begin();
+        return minValue.top();
     }
 private:
     stack<int> s;
-    multiset<int> m;
+    stack<int> minValue;
 };
 
 /**
