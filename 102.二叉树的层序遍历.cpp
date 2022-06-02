@@ -1,11 +1,12 @@
 /*
- * @lc app=leetcode.cn id=104 lang=cpp
+ * @lc app=leetcode.cn id=102 lang=cpp
  *
- * [104] 二叉树的最大深度
+ * [102] 二叉树的层序遍历
  */
-#include <bits/stdc++.h>
+#include  <bits/stdc++.h>
 #include "TreeNode.h"
 using namespace std;
+
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -20,23 +21,25 @@ using namespace std;
  */
 class Solution {
 public:
-    int maxDepth(TreeNode* root) {
-        if(root==NULL) return 0;
-        // 不适用递归方法进行求解
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> ret;
+        if(root==nullptr) return ret;
         queue<TreeNode*> q;
         q.push(root);
-        int ret=0;
+        int cnt=0;
         while(!q.empty())
         {
-            int cnt=q.size();
+            vector<int> level;
+            cnt=q.size();
             while(cnt--)
             {
                 TreeNode* fnt=q.front();
                 q.pop();
+                level.push_back(fnt->val);
                 if(fnt->left!=nullptr) q.push(fnt->left);
                 if(fnt->right!=nullptr) q.push(fnt->right);
             }
-            ret++;
+            ret.push_back(level);
         }
         return ret;
     }

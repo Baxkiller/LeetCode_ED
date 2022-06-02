@@ -29,7 +29,44 @@
         "tuple": "cpp",
         "iterator": "cpp",
         "string": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "functional": "cpp",
+        "system_error": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "kunpeng.remote.ssh.privatekeypath": "d:\\tmp",
+    "kunpeng.remote.ssh.machineinfo": [
+        {
+            "label": "120.46.186.72",
+            "ip": "120.46.186.72",
+            "port": "22",
+            "user": "root",
+            "workspace": "/root/test"
+        }
+    ],
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "kunpeng.func",
+                "settings": {
+                    "foreground": "#28a745"
+                }
+            },
+            {
+                "scope": "kunpeng.intrinsics",
+                "settings": {
+                    "foreground": "#28a745"
+                }
+            },
+            {
+                "scope": "kunpeng.builtIn",
+                "settings": {
+                    "foreground": "#28a745"
+                }
+            }
+        ]
+    },
+    "kunpeng.remote.ssh.isAutoSyncCode": false
 }
