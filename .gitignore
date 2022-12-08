@@ -1,0 +1,7 @@
+test.exe
+test.cpp
+demo.cpp
+demo.c
+demo.exe
+.*,exe
+.vscode

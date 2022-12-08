@@ -3,6 +3,51 @@
  *
  * [662] 二叉树最大宽度
  */
+
+/*
+ 超出时间限制
+if(root==nullptr) return 1;
+
+        deque<TreeNode*> q;
+        q.push_back(root);
+
+        int ret=1;
+        while(!q.empty())
+        {
+            int n=q.size();
+            while(n--)
+            {
+                TreeNode* cur=q.front();
+                q.pop_front();
+                if(cur==nullptr)
+                {
+                    q.push_back(nullptr);
+                    q.push_back(nullptr);
+                }
+                else
+                {
+                    q.push_back(cur->left);
+                    q.push_back(cur->right);
+                }
+            }
+
+            while(!q.empty() && q.front() == nullptr)
+                q.pop_front();
+            while(!q.empty() && q.back() == nullptr)
+                q.pop_back();
+            
+            n=q.size();
+            if(ret<n) ret=n;
+        }
+        return ret;
+*/
+
+/*
+新的想法是通过dfs,使用long long 表示每个节点的下标,进行dfs
+*/
+
+
+
 #include <bits/stdc++.h>
 #include "TreeNode.h"
 using namespace std;
@@ -20,33 +65,43 @@ using namespace std;
  */
 class Solution {
 public:
+
     int widthOfBinaryTree(TreeNode* root) {
-        deque<TreeNode*> q;
-        q.push_back(root);
-        int ret=0;
-        while(!q.empty())
+        queue<TreeNode*> level;
+        queue<int> indexs;
+
+        level.push(root);
+        indexs.push(1);
+
+        int size=0;
+        int ret=1;
+        while(!level.empty())
         {
-            int cnt=q.size();
-            ret=max(ret,cnt);
+            size=level.size();
+            
+            int begin_index=indexs.front();
+            int end_index=indexs.back();
+            ret=max(ret,end_index-begin_index+1);
 
-            while(cnt--)
+            while(size--)
             {
-                TreeNode* f=q.front();
-                q.pop_front();
+                TreeNode* p=level.front();
+                level.pop();
+                int index=indexs.front();
+                indexs.pop();
 
-                if(f==nullptr)
+                if(p->left!=nullptr)
                 {
-                    q.push_back(nullptr);
-                    q.push_back(nullptr);
+                    level.push(p->left);
+                    indexs.push(index*2);
                 }
-                else
+                
+                if(p->right!=nullptr)
                 {
-                    q.push_back(f->left);
-                    q.push_back(f->right);
+                    level.push(p->right);
+                    indexs.push(index*2+1);
                 }
             }
-            while(q.back()==nullptr)
-                q.pop_back();
         }
         return ret;
     }
